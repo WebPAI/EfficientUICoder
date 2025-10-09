@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html><head><title>文系の人にもわかるHTML5+CSS3入門 — 第12章</title></head><body><div id="pageTopForSmartPhone"></div><div style="z-index: 100; position: fixed; bottom: 4rem; right: 0; text-align: center; padding: 1em 0.8em; line-height: 0.6em; opacity: 0.7; border-radius: 0.3em; background-color: #00C;"><span style="color: white;">Top▲</span></div><div id="mainContents"><div id="html-textbook-top-items"><h1>文系の人にもわかるHTML5+CSS3入門</h1><div id="navigation-top"><a>はじめに</a>  
+  <a>1</a>  
+  <a>2</a>  
+  <a>3</a>  
+  <a>4</a>  
+  <a>5</a>  
+  <a>6</a>  
+  <a>7</a>  
+
+<a>目次</a>  
+   <a>講座・コラム一覧</a> 
+      </div></div><div id="text-body"><div></div><h2>第12章 CSS3概説</h2><p>
+この章では、これまで何度か登場していたスタイルシートについてその概要を紹介します。細かな内容まで記述すると本が１冊書けてしまいますので、ここではスタイルシートの「思想」や便利な使い方を簡単に紹介しましょう。</p><h3>まとめ</h3><p></p><h4>スタイルシートを定義できる３つの場所</h4><ul><li>
+ HTMLファイルとは別のファイルに定義する。この場合HTMLファイルでは、ヘッダ部で次の例のように&lt;link&gt;タグを使って別ファイルを参照する。<br/>
+   &lt;link rel="stylesheet" href="essay.css" type="text/css"&gt; </li><li>
+ HTMLファイルのヘッダ部に&lt;style&gt;タグを使ってそのファイルで利用するスタイルを定義する</li><li>
+ 「その場」でタグのstyle属性を使って次のように指定する。<br/>
+   &lt;p style="text-align: right; font-size: smaller"&gt; </li></ul><h4>関連するタグや属性など</h4><ul><li>
+   /* ... */ ―― CSSのコメント
+ </li></ul></div><div id="adBottom" style="margin-top: 2em;"><ins class="adsbygoogle" style="display:block"></ins></div><p class="end-title">
+文系の人にもわかるHTML5+CSS3入門
+<br/>
+第12章  	<span style="background-color: yellow; margin-left: 1em;"><a>次の章へ</a></span></p><div id="navigation-bottom"><a>はじめに</a>  
+  <a>1</a>  
+  <a>2</a>  
+  <a>3</a>  
+  <a>4</a>  
+  <a>5</a>  
+  <a>6</a>  
+  <a>7</a>  
+
+<a>目次</a>  
+   <a>講座・コラム一覧</a> </div></div><div id="copyright"><p>
+Copyright (C) 20016-2023 <a>Marlin Arms Corporation</a>.
+</p><p>
+当サイトでは、第三者配信による広告サービスを利用しています。このような広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報（氏名、住所、メール アドレス、電話番号は含まれません） を使用することがあります。この処理の詳細やこのような情報が広告配信事業者に使用されないようにする方法については、<a>ここをクリック</a>してください。
+</p></div><style>body {
+    margin: 0;
+    /*    width: 100%; */
+    padding: 0
+    }
+#mainContents {
+    font-family: "ヒラギノ明朝 Pro W3", meiryo, "ＭＳ Ｐ明朝", "細明朝体", serif;
+    font-size: medium;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    /*  background-color: #EEEEEE; */
+    background-color: #FAFFFE;
+    max-width: 800px;
+    border-width: 2px;
+    border-color: #001044;
+    border-style: solid;
+    /*  text-align: justify; */
+    /*	margin-right: 5%;
+    	*/
+    }
+#copyright {
+    font-size: xx-small;
+    padding: 0.2em 2em;
+    margin: 1em 0 0 0;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #666;
+    color: #999
+    }
+#copyright p {
+    font-size: xx-small
+    }
+#html-textbook-top-items {
+    margin: 0;
+    padding: 0;
+    /*
+    		 margin-left: 20px;
+    		 margin-right: 20px;
+    */
+    /*	 width: 800px; */
+    }
+h1 {
+    /* title */
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", sans-serif;
+    font-size: 18pt;
+    text-align: center;
+    color: #FFF;
+    background-color: #172387;
+    /*#0012CE; */
+    margin: 0;
+    padding: 0
+    }
+#navigation-top {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2px 4px 2px 15px;
+    background-color: #AFEDE7;
+    /*AFEDE7; #BDDCAD; */
+    font-size: smaller;
+    text-align: right;
+    border-color: #001044;
+    /* #006600 */
+    border-style: solid;
+    border-width: 2px 0 2px 0
+    }
+#navigation-bottom {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2px 4px 2px 15px;
+    background-color: #AFEDE7;
+    /* #BDDCAD; */
+    font-size: smaller;
+    text-align: right;
+    /*
+        border-color: #0012CE; 
+        border-style: solid;
+    */
+    border-width: 0
+    }
+#text-body {
+    /* text 全体 */
+    position: relative;
+    margin-left: 10px;
+    margin-right: 20px;
+    top: 20px;
+    /* width: 640px; */
+    overflow: hidden;
+    /*  margin-right:180px;
+      height: 100%;
+    	*/
+    }
+h2 {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", meiryo, sans-serif;
+    text-align: center;
+    font-size: large;
+    background-color: #AFEDE7;
+    /*94CCCC ;*/
+    /* #CCFFFF; */
+    border-top: 1px solid #172387;
+    /* #0000CC; */
+    border-right: 20px solid #172387;
+    /* #0000CC; */
+    border-bottom: 1px solid #172387;
+    /* #0000CC; */
+    border-left: 20px solid #172387;
+    /* #0000CC; */
+    padding: 0.2em;
+    margin: 0.1em 2em 0.3em 2em;
+    color: black
+    }
+h3 {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", meiryo, sans-serif;
+    font-size: larger;
+    background-color: #AFEDE7;
+    /* #CCFFFF;*/
+    border-left-width: 6px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #172387;
+    /* #0000CC; */
+    border-right-color: #172387;
+    /* #0000CC; */
+    border-bottom-color: #172387;
+    /* #0000CC; */
+    border-left-color: #172387;
+    /* #0000CC; */
+    border-bottom-width: 1px;
+    padding: 3px 10px 3px 15px;
+    margin-top: 30px;
+    margin-bottom: 20px
+    }
+h4 {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", serif;
+    font-size: 14px;
+    background-color: #AFEDE7;
+    /* #CCFFFF;*/
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-top-color: #172387;
+    /* #0000CC; */
+    border-right-color: #172387;
+    /* #0000CC; */
+    border-bottom-color: #172387;
+    /* #0000CC; */
+    border-left-color: #172387;
+    /* #0000CC; */
+    border-bottom-width: 1px;
+    padding: 3px 10px 3px 15px;
+    margin-top: 30px;
+    margin-bottom: 20px
+    }
+p {
+    margin-top: 1em;
+    margin-bottom: 10px;
+    margin-left: 1.2cm;
+    margin-right: 1.2cm;
+    /*  font-size: medium; */
+    line-height: 1.5em
+    }
+ul {
+    margin: 10px 1cm 10px 1cm;
+    line-height: 140%
+    }
+li {
+    margin-bottom: 10px
+    }
+.end-title {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", sans-serif;
+    color: #FFF;
+    background-color: #172387;
+    /*#0012CE; */
+    text-align: right;
+    margin: 30px 0 0 0;
+    padding: 5px 10px 5px 0;
+    border-color: #001044;
+    /* #006600 */
+    border-style: solid;
+    border-width: 2px 0 0 0
+    }
+#adBottom {
+    text-align: center;
+    margin: 1em auto 0 auto
+    }</style></body></html>

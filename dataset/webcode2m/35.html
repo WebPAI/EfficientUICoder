@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html><head><title>elweb.cz :
+ 	   : elektronika na webu Martina Olejra ::.</title></head><body style="background: url(http://www.elweb.cz/pozadi.jpg) ; background-position: center; background-repeat: repeat-y"><a></a><div class="stranka" style="height:169px; background:url(http://www.elweb.cz/elwebcz.jpg) no-repeat; border-bottom:solid 1px black; border-top:solid 1px black;"><div style="position:relative; text-align:left; width:760px; height:116px;"></div><div class="menuy"><br/> | </div><a><div class="menux"><br/><b>frum</b></div></a><div class="menuy"><br/> | </div><a><div class="menux" style="width:75px;"><br/><b>kalkultor</b><br/><span style="font-size:10px; color:white; position:relative; top:7px;">kalkultor<br/>datasheety<br/>slovnky..</span></div></a><div class="menuy"><br/> | </div><a><div class="menux"><br/><b>lnky</b></div></a><div class="menuy"><br/> | </div><div class="menuz"><br/><span id="rekl_forum" style="border:none; z-index: 100; visibility:hidden;"><a style="border:none; z-index: 3; color:rgb(234,241,244);">frum</a></span><br/></div><div class="menuz"><br/><span id="rekl_elweb" style="border:none; z-index: 100; visibility:hidden;"><a style="border:none; z-index: 3; color:rgb(234,241,244);">lnky</a></span><br/></div></div><div class="stranka" style="background:url(pozadi_b1.jpg) no-repeat rgb(248,252,252); clear: both; "><div style="padding-left:6px;"><br/><h1>
+		8-kanlov <b>sriov dlkov ovldn</b> po dvou drtech (pijma) s PIC16F84	</h1><br/><br/><br/>
+Toto sriov dlkov ovldn komunikuje pouze po dvou drtech. (jeden datov a zem). Kadch nkolik milisekund se pen informace z osmi nezvislch vstup. Toto zazen se d pout napklad pro ovldn robot a jinch model, protoe dvojlinka nebo jet lpe jen jeden stnn kablk je tenk a snadno ohebn. D se vyut vude tam, kde by bylo nevhodn vst devt drt - takto se nahrad pouze dvma. Komunikace pracuje na podobnm principu jako vtina infraervench dlkovch ovlada. Nejprve se vyle dlouh start impuls, aby pijma poznal, e se jedn o zatek penosu a potom se vyslaj jednotliv bity od prvnho a po osm. pokud se vyle krtk impuls, znamen to logickou nulu a pokud se vyle o nco del impuls, znamen to logickou jedniku. Toto vysln se neustle opakuje. Schma je dky pouit mikrokontrolru PIC16F84 velice jednoduch. Na frekvenci pouitho krystalu pli nezle, ale mus bt u vyslae i u pijmae shodn! Doporuuji 4MHz. Kablk mezi pijmaem a vyslaem me bt dlouh a cca 100m. Po mench pravch se d tento kablk nahradit infraervenou led diodou a infraervenm hybridnm pijmaem nebo rovnou hybridnmi radiovmi moduly. Na vstupy lze pipojit pes npn tranzistory napklad rel, ktermi se mou spnat i elektro spotebie na 230V AC.<div style="text-align: center"></div><br/><br/><a><b>obrzek/schma ve formtu gif</b></a><br/><a><b>program pro mikrokontrolr ve formtu hex</b></a> (staen: prav tlatko &gt; uloit cl jako)<div style="font-size:8pt; padding:6px; padding-left:20px;">V nkterch prodejnch s elektro soustkami vm podle tohoto souboru donesenho na disket mikrokontrolr naprogramuj (nap. GM el. <a>www.gme.cz</a>)</div><a><b>program pro mikrokontrolr ve formtu asm</b></a> (staen: prav tlatko &gt; uloit cl jako)<div style="font-size:8pt; padding:6px; padding-left:20px;">Asm je formt, ve kterm lze program upravovat. Ped naprogramovnm do mikrokontrolru se mus pevst pomoc <a>assembleru</a> do formtu hex</div><br/><div><table width="660"><tr><td width="50%"><a>&lt;&lt; pedchoz lnek</a><br/>03088-kanlov <b>sriov dlkov ovldn</b> po dvou drtech (vysla) s PIC16F84</td><td width="50%"><a>dal lnek     &gt;&gt;</a><br/>0199<b>2-psmov reprobedny 50/100 VA rms, 70 a 20 000Hz s reproduktory TVM</b></td></tr></table></div></div><div style="text-align: center; clear: both;  background:white; height:1px;"></div></div><div style="width:468px; margin-left:auto; margin-right:auto;"><noscript><div style="display:inline;width:468px;text-align:center;font-weight:900;font-family:Verdana,sans-serif;font-size:xx-small;vertical-align:bottom"><a><img height="60" src="rick.jpg" style="border:0px none" width="468"/></a></div></noscript></div><div class="paticka"><br/>
+(c) Martin Olejr, 1999  2023 :: www.elweb.cz :: <a>kontakt</a><a><img height="1" src="rick.jpg" width="1"/></a></div><style>body {
+    font-size: 10pt;
+    font-family: tahoma;
+    color: rgb(20, 30, 30);
+    margin: 0;
+    padding: 0;
+    text-align: center
+    }
+a {
+    text-decoration: none;
+    color: rgb(63, 146, 174)
+    }
+.stranka {
+    position: relative;
+    margin: auto;
+    text-align: left;
+    width: 760px;
+    _width: 762px;
+    border: 1px solid rgb(230, 240, 240)
+    }
+.paticka {
+    position: relative;
+    width: 760px;
+    _width: 762px;
+    bottom: 0;
+    margin: auto;
+    font-size: 7pt;
+    border: 1px solid rgb(230, 240, 240);
+    border-bottom: none;
+    background: white
+    }
+h1 {
+    font-size: 16pt;
+    margin-bottom: 12px
+    }
+.menux {
+    padding: 0;
+    background: none;
+    width: 47px;
+    height: 40px;
+    float: right;
+    font-weight: bold;
+    text-align: center;
+    cursor: hand;
+    overflow: hidden
+    }
+.menuy {
+    float: right;
+    text-align: center;
+    width: 16px
+    }
+.menuz {
+    padding: 0;
+    width: 47px;
+    height: 40px;
+    float: right;
+    text-align: center
+    }</style></body></html>

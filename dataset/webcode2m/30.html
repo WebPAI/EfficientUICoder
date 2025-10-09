@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html><head><title>Bind Variable Peeking – execution plan inefficiency | Tanel Poder Consulting</title></head><body><nav><ul class="menu"><li><a>Home</a></li><li><a>About</a></li><li><a>Downloads</a></li><li><a>Topics</a></li><li><a>Videos</a></li><li><a>Contact</a></li><li><a>Consulting</a></li><li><a>Events</a></li><li><a>Training</a></li><li><a><img class="socialbutton2" src="rick.jpg"/></a><a><img class="socialbutton2" src="rick.jpg"/></a></li></ul><hr/></nav><div class="article-meta"><h1><span class="title">Bind Variable Peeking – execution plan inefficiency</span></h1><h2 class="author">Tanel Poder</h2><h2 class="date">2010-02-02</h2></div><main><p>In my <a>Beyond Oracle Wait interface article</a> I troubleshooted a test case where an execution plan somehow went “crazy” and started burning CPU, lots of logical IOs and the query never completed.</p><p>I have uploaded the test case that you can run here (note that it drops and creates tables T1..T5 in your schema):</p><p><a>/ast/02_bind_peeking_nested_loops.sql</a></p><p>Basically what I do is this:</p><ol><li>I run the query with bind variable values where only a handful of rows match the filter condition. Thus Oracle picks nested loop join (and indexed access path)</li><li>Then I run the <em>same</em> query with different bind values, where a lot of rows match the filter condition. Oracle reuses existing execution plan (with nested loops!!!). Oracle ends up looping through a lot of blocks again and again (because nested loop visits the “right” side of the join once for <strong><em>every</em></strong> row coming from the “left” side of the join).</li></ol><p>Using nested loops over <em>lots</em> of rows is a sure way to kill your performance.</p><p>And an interesting thing with my script is that the problem still happens in Oracle 11.1 and 11.2 too!</p><p>Oracle 11g has Adaptive Cursor Sharing, right? This should take care of such a problem, right? Well no, adaptive bind variable peeking is a <em>reactive</em> technique – it only kicks in <em>after</em> the problem has happened!</p><p><em>Update: This is also a problem on Oracle 12.1.02. Shouldn’t Oracle’s adaptive plans avoid this issue? Nope! As the adaptive plan decision is done during the 1st execution of the cursor and we correctly pick a nested loops plan for the 1st set of binds (with no or little matching rows). But our problem shows up only during the 2nd execution with “bad” bind variable values in place.</em></p><p>So feel free to download the <a>script</a>, review it and test it out!</p></main><hr/><div style="display: inline-block"><span style="display: inline-block; width: 105px;"><a><img src="rick.jpg"/></a></span><span style="display: inline-block; width: 600px;"><div><ol><li><em>Check out my 2022 online training classes in a <strong>new format</strong>!<br/><a>Advanced Oracle SQL Tuning training</a>.
+        <a>Advanced Oracle Troubleshooting training</a>,
+        <a>Linux Performance &amp; Troubleshooting training</a>:
+        Learn when it's convenient to you and get your training questions answered even months after taking the class!
+      </em></li><li><em><a>Get weekly updates</a> by email or follow Social/RSS</em></li></ol></div></span></div><hr/><footer><hr/>
+  © <a>Tanel Põder</a> 2007-2023
+  </footer><style>body {
+    font-family: charter, Optima, Georgia, "Times New Roman", "Times", serif
+    }
+body {
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
+    line-height: 1.5em;
+    color: #222
+    }
+.socialbutton2 {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 5px
+    }
+.menu {
+    padding: 0
+    }
+.menu li {
+    display: inline-block
+    }
+.article-meta, .menu a {
+    text-decoration: none;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px
+    }
+.menu a {
+    color: #00e
+    }
+.menu, .article-meta, footer {
+    text-align: center
+    }
+.title {
+    font-size: 0.75em
+    }
+h2 {
+    font-size: 1em
+    }
+footer a {
+    text-decoration: none
+    }
+hr {
+    border-style: dashed;
+    color: #ddd
+    }
+img, iframe, video {
+    max-width: 100%
+    }</style></body></html>

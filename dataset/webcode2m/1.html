@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html><head></head><body><div class="popup-overlay" id="popupOverlayPunchCard"><div class="popup"><h2>Join The Fun @ Wall Walkers Bouldering</h2><h4>
+        Initial Purchase of a 24 hour Punch Card includes a one time 24 hour
+        access fee of $20.00, charged in person on pickup.
+      </h4><select id="userType"><option>Adult</option><option>Student</option><option>Youth</option><option>Service Person</option></select><div class="slider-container"><span id="noShoesLabel">No Shoes</span><label><input id="shoesSwitch"/><div class="slider"></div></label><span id="shoesLabel" style="font-weight: bold; color: #fff000">Shoes</span></div><div class="buttonsPunch"><button class="option-btn" id="btn5">5 Punches</button><button class="option-btn selected" id="btn10">
+          10 Punches
+        </button><button class="option-btn" id="btn20">
+          20 Punches
+        </button></div><table><thead><tr><th></th><th>Pass</th><th>Shoes</th></tr></thead><tbody><tr><td>Normal Price</td><td id="pass-normal-price"></td><td id="shoes-normal-price"></td></tr><tr><td>Percent Savings</td><td id="pass-percent-savings"></td><td id="shoes-percent-savings"></td></tr><tr><td>Discounted Price</td><td id="pass-discounted-price"></td><td id="shoes-discounted-price"></td></tr><tr class="highlightRow"><td>Your Savings</td><td id="savings"></td></tr><tr><td>Your Total</td><td id="total"></td></tr></tbody></table><br/><p class="popup-content">
+        By purchasing this Punch Card you agree to the terms and conditions
+        listed below.
+      </p><div class="buttons"><a class="no-PunchCard-btn" id="noPunchCardBtn">No</a><a class="yes-PunchCard-btn" id="yesPunchCardBtn">Yes</a></div><div id="fallbackDiv"></div><ol><li>Punch Cards are non-refundable and non-transferable.</li><li>Punches expire 1 year from date of purchase.</li><li>
+          Initial Purchase of a 24 hour Punch Card includes a one time 24 hour
+          access fee of $20.00, charged in person on pickup.
+        </li><li>
+          Initial Cards must be picked up during staffed hours, a member of
+          our staff will run you through the site induction.
+        </li><li>
+          24 Hour access is only available to those who have completed the
+          site induction.
+        </li><li>
+          24 Hour access is only available to people aged 16 years and over.
+          Under 16's must be accompanied by an adult at all times.
+        </li></ol></div></div><style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #181818;
+    color: white
+    }
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999
+    }
+.popup {
+    background-color: #181818;
+    border-radius: 10px;
+    border: 1px solid #fff000;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 90vh;
+    /* max-height set to 90% of the viewport height */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    overflow-x: hidden;
+    /* Hide horizontal scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+    }
+h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    color: white
+    }
+.buttons {
+    display: flex;
+    justify-content: space-between
+    }
+a {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px
+    }
+.yes-PunchCard-btn {
+    background-color: #fff000;
+    color: black;
+    /* box-shadow: 0 0 10px #fff000, 0 0 20px #fff000, 0 0 30px #fff000, 0 0 40px #fff000; */
+    transition: box-shadow 0.3s ease-in-out
+    }
+.no-PunchCard-btn {
+    background-color: #f44336;
+    color: white
+    }
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px
+    }
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    /* some space before and after the slider */
+    }
+.slider-container span {
+    margin: 0 20px;
+    /* Increase spacing */
+    color: white;
+    font-size: 16px
+    }
+.slider-container label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px
+    }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #646464;
+    transition: 0.4s;
+    border-radius: 34px
+    }
+.buttonsPunch {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Add this line to make the buttons wrap to the next line */
+    height: auto;
+    /* Adjust this as needed */
+    margin-bottom: 20px;
+    /* some space after the buttons */
+    }
+.option-btn {
+    background-color: #181818;
+    border: 2px solid #fff000;
+    color: white;
+    flex-grow: 1;
+    margin-right: 3%;
+    /* Changed from fixed pixel value to percentage */
+    margin-bottom: 5%;
+    /* Added a bottom margin for vertical spacing */
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    /* This ensures padding and border are included in width */
+    }
+.option-btn.selected {
+    background-color: #fff000;
+    color: black
+    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px
+    }
+th, td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd
+    }
+th {
+    background-color: #4c93af;
+    color: white
+    }
+tr.highlightRow {
+    color: #fff000;
+    font-weight: bolder
+    }
+#fallbackDiv {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold
+    }</style></body></html>
