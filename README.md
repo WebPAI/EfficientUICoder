@@ -69,7 +69,7 @@ Multimodal Large Language Models have demonstrated exceptional performance in UI
   ![Redundancy Case](./assets/output_redundancy_case.png)
 
 
-## Citation 🔥
+## 🔥 Citation
 
 ```
 @misc{xiao2025efficientuicoder,
