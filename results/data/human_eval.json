@@ -1,0 +1,154 @@
+{
+  "llava-v1.6-34b": {
+    "d2c": {
+      "EfficientUICoder": {
+        "total": 50,
+        "completed": 50,
+        "win": 14,
+        "tie": 27,
+        "lose": 9
+      },
+      "Visionzip": {
+        "total": 50,
+        "completed": 50,
+        "win": 7,
+        "tie": 24,
+        "lose": 19
+      },
+      "Pdrop": {
+        "total": 50,
+        "completed": 50,
+        "win": 3,
+        "tie": 21,
+        "lose": 26
+      },
+      "FastV": {
+        "total": 50,
+        "completed": 50,
+        "win": 9,
+        "tie": 16,
+        "lose": 25
+      },
+      "Random": {
+        "total": 50,
+        "completed": 50,
+        "win": 5,
+        "tie": 14,
+        "lose": 31
+      }
+    },
+    "webcode2m": {
+        "EfficientUICoder": {
+          "total": 50,
+          "completed": 50,
+          "win": 25,
+          "tie": 18,
+          "lose": 7
+        },
+        "Visionzip": {
+          "total": 50,
+          "completed": 50,
+          "win": 11,
+          "tie": 12,
+          "lose": 27
+        },
+        "Pdrop": {
+          "total": 50,
+          "completed": 50,
+          "win": 11,
+          "tie":13 ,
+          "lose": 26
+        },
+        "FastV": {
+          "total": 50,
+          "completed": 50,
+          "win": 9,
+          "tie": 16,
+          "lose": 25
+        },
+        "Random": {
+          "total": 50,
+          "completed": 50,
+          "win": 8,
+          "tie": 12,
+          "lose": 30
+        }
+      }
+},
+  "llava-v1.6-7b": {
+    "d2c": {
+      "EfficientUICoder": {
+        "total": 50,
+        "completed": 50,
+        "win": 15,
+        "tie": 21,
+        "lose": 14
+      },
+      "Visionzip": {
+        "total": 50,
+        "completed": 50,
+        "win": 10,
+        "tie": 16,
+        "lose": 24
+      },
+      "Pdrop": {
+        "total": 50,
+        "completed": 50,
+        "win": 11,
+        "tie": 15,
+        "lose": 24
+      },
+      "Fastv": {
+        "total": 50,
+        "completed": 50,
+        "win": 5,
+        "tie": 24,
+        "lose": 21
+      },
+      "Random": {
+        "total": 50,
+        "completed": 50,
+        "win": 11,
+        "tie": 14,
+        "lose": 25
+      }
+    },
+    "webcode2m": {
+        "EfficientUICoder": {
+          "total": 50,
+          "completed": 50,
+          "win": 24,
+          "tie": 13,
+          "lose": 13
+        },
+        "Visionzip": {
+          "total": 50,
+          "completed": 50,
+          "win": 17,
+          "tie": 14,
+          "lose": 19
+        },
+        "Pdrop": {
+          "total": 50,
+          "completed": 50,
+          "win": 21,
+          "tie": 14,
+          "lose": 15
+        },
+        "Fastv": {
+          "total": 50,
+          "completed": 50,
+          "win": 18,
+          "tie": 14,
+          "lose": 18
+        },
+        "Random": {
+          "total": 50,
+          "completed": 50,
+          "win": 16,
+          "tie": 15,
+          "lose": 19
+        }
+      }
+  }
+}
